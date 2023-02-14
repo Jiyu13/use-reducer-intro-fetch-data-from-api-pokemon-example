@@ -3,6 +3,8 @@ export function getPokemon(name) {
         .then((r) => {
             if (r.ok) return r.json();
             return r.text().then((error) => {
+                // console.log(r)  // Response{... status: 404...}
+                // console.log(error) // "Not Found"
                 throw error;
             });
         })
